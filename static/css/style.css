@@ -1,0 +1,15 @@
+body {
+    background-color: lightblue;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    border: 2px solid;
+    padding: 5px;
+    text-align: left;
+    font-size: 21px;
+}

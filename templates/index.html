@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Movie Database with Jinja</title>
 </head>
 <body>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>IMDB</th>
+        </tr>
+        {% for movie in movies %}
+        <tr>
+            <td>{{movie.title}}</td>
+            <td>{{movie.summary}}</td>
+            <td><a href="{{movie.imdb}}">Link</a></td>
+        </tr>
+        {% endfor %}
+    </table>
 
 </body>
 </html>
