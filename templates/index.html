@@ -6,7 +6,10 @@
     <title>Movie Database with Jinja</title>
 </head>
 <body>
-
+    {% if not name%}
+        {% include "login.html" %}
+    {% endif %}
+    {% if name %}
     <table>
         <tr>
             <th>Title</th>
@@ -21,6 +24,9 @@
         </tr>
         {% endfor %}
     </table>
-
+        <form method="post" action="/logout">
+            <button type="submit">Logout</button>
+        </form>
+    {% endif %}
 </body>
 </html>
