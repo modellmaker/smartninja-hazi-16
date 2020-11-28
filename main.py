@@ -26,7 +26,7 @@ def openfile():
     with open("users.csv", 'r') as user_file:
         content = user_file.read().splitlines()
         for row in content:
-            (username, pwd) = row.split(":")
+            (username, pwd) = row.split(",")
             my_dict[username] = pwd
         return my_dict
 
@@ -35,13 +35,13 @@ def writefile(username, password):
     with open("users.csv", 'a+') as user_file:
         content = user_file.read().splitlines()
         for row in content:
-            (name, pwd) = row.split(":")
+            (name, pwd) = row.split(",")
             my_dict[name] = pwd
         if username is None:
             pass
         else:
             my_dict.update({username: password})
-        user_file.write(str("\n" + username + ":" + password))
+        user_file.write(str("\n" + username + "," + password))
 # my_dict = {"asd@asd.asd": "asd", "joe@joe.joe": "joe", "email@address.com": "pwd1234"}
 
 
