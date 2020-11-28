@@ -7,9 +7,17 @@
 </head>
 <body>
     {% if not name%}
-        {% include "login.html" %}
+        <h2>Welcome to the SmartNinja movie database!</h2>
+        {% if not message%}
+            <p>To access our page, You need to login below. If You don't have an account yet, You can easily sign up <a href="/signup-main">here.</a></p>
+            {% include "login.html" %}
+        {% else %}
+            {{message}}<br>
+            {% include "login.html" %}
+        {% endif %}
     {% endif %}
     {% if name %}
+    <p>Welcome back, {{name}}</p>
     <table>
         <tr>
             <th>Title</th>
@@ -25,7 +33,7 @@
         {% endfor %}
     </table>
         <form method="post" action="/logout">
-            <button type="submit">Logout</button>
+            <button class="inputbox" type="submit">Logout</button>
         </form>
     {% endif %}
 </body>
